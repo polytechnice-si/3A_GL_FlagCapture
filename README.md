@@ -30,7 +30,7 @@ Unpacking objects: 100% (4/4), done.
 
 Then, we create 3 maven projects:
 
-  - A root project (type: pom), which contains the two others and acts as parent
+  - A root project (type: pom), which contains the two others and acts as parent (for shared configuration)
   - A project to store the `game`, as a java program (type: jar)
   - A project to store the `player` (type: jar), with a dependencies requiring the `game`
 
@@ -49,9 +49,19 @@ The _Project Object Models_ (POMs) associated to these 3 projects are quite usua
 
  We can test through the command line that the projects are valid, executing `mvn clean package` returns a build success. Thus, we can import the project in our favorite IDE (aka, IntelliJ), and start project implementation.
  
+  - Achievement:
+    - [X] Start a Java project as a Maven multi-modules project 
+  
 ## Building the Game
 
 The game is quite simple. It exposes an interface to create and explore maps:
 
 
  
+## Link with sonar
+
+    mvn org.jacoco:jacoco-maven-plugin:prepare-agent clean package sonar:sonar
+
+
+mvn -q exec:java
+
